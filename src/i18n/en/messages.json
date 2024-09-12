@@ -1,0 +1,49 @@
+{
+  "menuKikkake": {
+    "product": {
+      "error": {
+        "getList": "Get product kikkake list failed",
+        "create": "Create product kikkake failed",
+        "delete": "Delete product kikkake failed"
+      }
+    },
+    "category": {
+      "error": {
+        "getList": "Get category kikkake list failed",
+        "create": "Create category kikkake failed",
+        "delete": "Delete category kikkake failed"
+      }
+    },
+    "getCode": "Get code kikkake failed"
+  },
+  "auth": {
+    "forgotPassword": {
+      "error": {
+        "emailRequired": "Email is required",
+        "isEmail": "Please enter a valid email address",
+        "existEmail": "Email does not exist",
+        "faild": "Forgot password faild",
+        "maxLength": "Password must be at least 8 alphanumeric characters and up to 255 characters"
+       },
+       "resetPassword": {
+         "error": {
+           "failed": "Password reset failed"
+        }
+      }
+    }
+  },
+  "member": {
+    "existMember": "Member does not exist",
+    "existToken": "Token does not exist",
+    "tokenExpired": "The URL of the password reset page has expired.",
+    "tokenUsed": "The URL of the password reset page was used."
+  },
+  "product": {
+    "dontExistCategory": "Category do not exist",
+    "deleteProductInSale": "This product cannot be deleted because it is used in a sales document.",
+    "deleteProductInSet": "This product cannot be deleted because it is used in a set product."
+  },
+  "category": {
+    "dontDelete": "It cannot be deleted because it uses product."
+  }
+}

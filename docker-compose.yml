@@ -1,0 +1,39 @@
+version: '3'
+
+services:
+  api:
+    build:
+      context: .
+      dockerfile: .docker/node/Dockerfile
+    restart: unless-stopped
+    env_file:
+      - .env
+    ports:
+      - 3001:3001
+    depends_on:
+      - db
+    networks:
+      - sam-network
+
+  db:
+    build: .docker/db
+    volumes:
+      - "./dbdata:/var/lib/mysql"
+    environment:
+      - MYSQL_USER=${DB_USERNAME}
+      - MYSQL_PASSWORD=${DB_PASSWORD}
+      - MYSQL_DATABASE=${DB_DATABASE}
+      - MYSQL_ROOT_PASSWORD=${DB_PASSWORD}
+    restart: unless-stopped
+    ports:
+      - 33067:3306
+    networks:
+      - sam-network
+
+volumes:
+  dbdata:
+
+networks:
+  sam-network:
+    name: sam-network
+    driver: bridge

@@ -1,0 +1,62 @@
+{
+  "menuKikkake": {
+    "product": {
+      "error": {
+        "getList": "商品キッカケリストの取得に失敗しました",
+        "create": "製品キッカケの作成に失敗しました",
+        "delete": "商品キッカケの削除に失敗しました"
+      }
+    },
+    "category": {
+      "error": {
+        "getList": "カテゴリーキッケケリストの取得に失敗しました",
+        "create": "カテゴリのキッカケの作成に失敗しました",
+        "delete": "カテゴリのキッカケの削除に失敗しました"
+      }
+    },
+    "getCode": "コードの取得に失敗しました"
+  },
+  "auth": {
+    "forgotPassword": {
+      "error": {
+        "emailRequired": "電子メールは必須です",
+        "isEmail": "正しくメールアドレスを入力してください",
+        "existEmail": "電子メールが存在しません",
+        "faild": "パスワードを忘れた場合は失敗しました",
+        "maxLength": "パスワードは半角英数で8 文字以上、255 文字以内にしてください"
+      },
+      "resetPassword": {
+        "error": {
+          "faild": "パスワードのリセットに失敗しました"
+        }
+      }
+    }
+  },
+  "member": {
+    "existMember": "メンバーが存在しません",
+    "existToken": "トークンが存在しません",
+    "tokenExpired": "パスワード再設定用ページのURLの有効期限が切れました。",
+    "tokenUsed": "パスワード再設定用ページのURLが利用されました。"
+  },
+  "product": {
+    "dontExistCategory": "区分コードが存在しません",
+    "deleteProductInSale": "この商品は売上伝票に使用されているため削除できません。",
+    "deleteProductInSet": "この商品は定番セットマスタに使用されているため削除できません。"
+  },
+  "category": {
+    "dontDelete": "商品区分を利用しているので削除できません"
+  },
+  "customer": {
+    "dontExistStaff": "従業員は存在しません",
+    "empty": "必須項目です",
+    "dontExistCategory": "カテゴリが存在しません",
+    "dontExistProduct": "製品が存在しません",
+    "dontExistCustomer": "顧客は存在しません",
+    "dontExistMasterCustomer": "顧客分類が存在しません",
+    "fomatEmail": "正確なメールを入力してください",
+    "maxLength": "100文字まで入力してください"
+  },
+  "errorDuplicateID": "エラーが発生しました。更新ボタン(F5)を押すともう一度お試しください。",
+  "errorAddress": "正しく郵便番号を入力してください"
+  
+}

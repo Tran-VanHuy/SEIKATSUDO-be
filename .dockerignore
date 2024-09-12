@@ -1,0 +1,6 @@
+Dockerfile
+dbdata
+node_modules
+dist
+.git
+.env

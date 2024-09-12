@@ -1,0 +1,39 @@
+image: pirago/docker:20.10.17-alpine3.16
+
+stages:
+  - build
+  - deploy
+
+variables:
+  GIT_DEPTH: 1
+
+build-dev:
+  stage: build
+  variables:
+    IMAGE: "$HUB_URL/sam/sam-api"
+  script:
+    - docker build -f .docker/node/Dockerfile -t $IMAGE .
+    - docker login $HUB_URL -u $HUB_USER -p $HUB_PASS
+    - docker push $IMAGE
+  only:
+    - develop
+  tags:
+    - pirago-k8s
+
+deploy-dev:
+  stage: deploy
+  image:
+    name: pirago/kubectl
+    entrypoint: [""]
+  variables:
+    GIT_STRATEGY: none
+    NAMESPACE: "116-sam"
+  script:
+    - kubectl config set-context --current --namespace=$NAMESPACE
+    - kubectl rollout restart deployment
+    - kubectl rollout status deployment --watch
+    - kubectl exec deployments/sam -- yarn migrate:run
+  only:
+    - develop
+  tags:
+    - pirago-k8s

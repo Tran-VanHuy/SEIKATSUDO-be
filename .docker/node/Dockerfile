@@ -1,15 +1,15 @@
 # -- Build
-FROM node:18-slim AS builder
+FROM node:18 AS builder
 WORKDIR /app
 
-COPY package.json yarn.lock ./
+COPY package.json ./
 RUN yarn install
 
-COPY . .
+COPY . . 
 RUN yarn build
 
 # -- App
-FROM node:18-slim
+FROM node:18
 WORKDIR /app
 
 RUN apt-get update \

@@ -14,7 +14,7 @@ export const TableName = 'payment_plan_histories';
 
 @Entity(TableName)
 export class PaymentPlanHistory {
-  @PrimaryGeneratedColumn('increment')
+  @PrimaryGeneratedColumn()
   id: number;
 
   @Column()

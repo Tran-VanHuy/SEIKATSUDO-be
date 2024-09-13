@@ -1,21 +1,18 @@
 import { DataSource } from 'typeorm';
 require('dotenv').config();
 
-const dataSourceOptions = {
+const dataSourceOptions : any = {
+  type: 'mysql', // Đảm bảo là 'mysql'
   host: process.env.DB_HOST,
   port: parseInt(process.env.DB_PORT || '3306'),
   username: process.env.DB_USERNAME || '',
   password: process.env.DB_PASSWORD || '',
-  type: (process.env.DB_CONNECTION as 'mysql') || 'mysql',
   database: process.env.DB_DATABASE || '',
-  synchronize: process.env.DB_SYNCHRONIZE == 'true',
+  synchronize: false, // Chỉ dùng cho môi trường phát triển
   timezone: 'local',
   entities: ['dist/src/entities/*.entity{.ts,.js}'],
   migrations: ['dist/src/database/migrations/*.js'],
-  seeds: ['dist/src/database/seeds/*.js'],
-  extra: {
-    connectionLimit: 50,
-  },
+  seeds: ['dist/src/database/seeds/*.js']
 };
 
 export const AppDataSource = new DataSource(dataSourceOptions);

@@ -1,9 +1,9 @@
 {
   "name": "sam-api",
   "version": "0.0.1",
-  "description": "",
+  "description": "- Node 16.x\r - MySQL 8.0.26",
   "author": "",
-  "private": true,
+  "private": false,
   "license": "UNLICENSED",
   "scripts": {
     "build": "nest build",
@@ -44,7 +44,7 @@
     "dayjs": "^1.11.10",
     "dotenv": "^16.3.1",
     "jsbarcode": "^3.11.6",
-    "mysql2": "^3.6.0",
+    "mysql2": "^2.3.3",
     "nestjs-i18n": "^10.3.6",
     "nestjs-typeorm-paginate": "^4.0.4",
     "nodemailer": "^6.9.7",
@@ -54,7 +54,7 @@
     "pdfmake": "^0.2.8",
     "reflect-metadata": "^0.1.13",
     "rxjs": "^7.2.0",
-    "typeorm": "^0.3.17",
+    "typeorm": "^0.3.20",
     "uuid": "^9.0.1"
   },
   "devDependencies": {
@@ -100,5 +100,18 @@
     ],
     "coverageDirectory": "../coverage",
     "testEnvironment": "node"
-  }
+  },
+  "main": "index.js",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Tran-VanHuy/SEIKATSUDO-be.git"
+  },
+  "bugs": {
+    "url": "https://github.com/Tran-VanHuy/SEIKATSUDO-be/issues"
+  },
+  "homepage": "https://github.com/Tran-VanHuy/SEIKATSUDO-be#readme",
+  "directories": {
+    "test": "test"
+  },
+  "keywords": []
 }

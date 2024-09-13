@@ -4,7 +4,7 @@ export const TableName = 'product_types';
 
 @Entity(TableName)
 export class ProductTypes {
-  @PrimaryGeneratedColumn('increment')
+  @PrimaryGeneratedColumn()
   id: number;
 
   @Column()

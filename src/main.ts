@@ -52,7 +52,7 @@ async function bootstrap() {
       },
     }),
   );
-  const APP_PORT = process.env.APP_PORT || 3001;
+  const APP_PORT = process.env.APP_PORT || 3002;
   await app.listen(APP_PORT, () => {
     Logger.log(`App listening on port ${APP_PORT}`, 'SERVER');
   });

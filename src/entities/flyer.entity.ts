@@ -4,7 +4,7 @@ export const TableName = 'flyers';
 
 @Entity(TableName)
 export class Flyer {
-  @PrimaryGeneratedColumn('increment')
+  @PrimaryGeneratedColumn()
   id: string;
 
   @Column()

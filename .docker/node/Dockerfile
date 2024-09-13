@@ -1,15 +1,28 @@
 # -- Build
-FROM node:18-slim AS builder
+FROM node:18 AS builder
 WORKDIR /app
 
-COPY package.json yarn.lock ./
+COPY package.json ./
 RUN yarn install
 
+COPY . . 
+# build stage
+FROM node:lts-alpine as build-stage
+WORKDIR /app
+COPY package*.json ./
+RUN npm install
 COPY . .
+RUN npm run build
+
+# production stage
+FROM nginx:stable-alpine as production-stage
+COPY --from=build-stage /app/dist /usr/share/nginx/html
+EXPOSE 80
+CMD ["nginx", "-g", "daemon off;"]
 RUN yarn build
 
 # -- App
-FROM node:18-slim
+FROM node:18
 WORKDIR /app
 
 RUN apt-get update \

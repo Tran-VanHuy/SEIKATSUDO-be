@@ -15,7 +15,8 @@ export const TableName = 'category_customer';
 
 @Entity(TableName)
 export class Category {
-  @PrimaryGeneratedColumn('increment')
+  
+  @PrimaryGeneratedColumn()
   id: number;
 
   @Column()

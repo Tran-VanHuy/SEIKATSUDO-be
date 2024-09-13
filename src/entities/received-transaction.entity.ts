@@ -14,7 +14,7 @@ export const TableName = 'received_transactions';
 
 @Entity(TableName)
 export class ReceivedTransaction {
-  @PrimaryGeneratedColumn('increment')
+  @PrimaryGeneratedColumn()
   id: number;
 
   @Column()

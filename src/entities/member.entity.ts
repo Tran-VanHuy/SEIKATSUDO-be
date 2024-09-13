@@ -5,7 +5,7 @@ export const TableName = 'members';
 
 @Entity(TableName)
 export class Member {
-  @PrimaryGeneratedColumn('increment')
+  @PrimaryGeneratedColumn()
   id: number;
 
   @Column()

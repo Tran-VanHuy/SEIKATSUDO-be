@@ -15,17 +15,18 @@ services:
       - sam-network
 
   db:
-    build: .docker/db
+    build:
+      context: .docker/db
     volumes:
       - "./dbdata:/var/lib/mysql"
     environment:
-      - MYSQL_USER=${DB_USERNAME}
-      - MYSQL_PASSWORD=${DB_PASSWORD}
-      - MYSQL_DATABASE=${DB_DATABASE}
-      - MYSQL_ROOT_PASSWORD=${DB_PASSWORD}
+      MYSQL_USER: ${DB_USERNAME}
+      MYSQL_PASSWORD: ${DB_PASSWORD}
+      MYSQL_DATABASE: ${DB_DATABASE}
+      MYSQL_ROOT_PASSWORD: ${ROOT_PASSWORD}
     restart: unless-stopped
     ports:
-      - 33067:3306
+      - 3307:3306
     networks:
       - sam-network
 
@@ -34,5 +35,4 @@ volumes:
 
 networks:
   sam-network:
-    name: sam-network
     driver: bridge

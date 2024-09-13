@@ -17,7 +17,7 @@ export const TableName = 'payments';
 
 @Entity(TableName)
 export class Payment {
-  @PrimaryGeneratedColumn('increment')
+  @PrimaryGeneratedColumn()
   id: number;
 
   @Column()

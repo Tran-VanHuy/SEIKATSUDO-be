@@ -4,7 +4,7 @@ export const TableName = 'holidays';
 
 @Entity(TableName)
 export class Holiday {
-  @PrimaryGeneratedColumn('increment')
+  @PrimaryGeneratedColumn()
   id: number;
 
   @Column()

@@ -15,7 +15,7 @@ export const TableName = 'master_customers';
 
 @Entity(TableName)
 export class MasterCustomer {
-  @PrimaryGeneratedColumn('increment')
+  @PrimaryGeneratedColumn()
   id: number;
 
   @Column()

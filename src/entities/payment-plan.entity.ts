@@ -16,7 +16,7 @@ export const TableName = 'payment_plans';
 
 @Entity(TableName)
 export class PaymentPlan {
-  @PrimaryGeneratedColumn('increment')
+  @PrimaryGeneratedColumn()
   id: number;
 
   @OneToOne(() => ReceivedTransaction, (transaction) => transaction.payment_plan_id)
